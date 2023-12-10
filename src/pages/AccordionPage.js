@@ -1,6 +1,14 @@
+import Accordion from "../components/Accordion";
+
 const AccordionPage = () => {
+    const items = [
+        { id: 1, header: 'This is the first item', content: 'This is the content for the first item'},
+        { id: 2, header: 'This is the second item', content: 'This is the content for the second item'},
+        { id: 3, header: 'This is the third item', content: 'This is the content for the third item'},
+    ];
+
     return (
-        <h1>This is the Accordion page</h1>
+        <Accordion items={ items } />
     )
 }
 
