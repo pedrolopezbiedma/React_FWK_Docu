@@ -3,8 +3,6 @@ import { useState } from "react"
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
 
 const Accordion = ({ items }) => {
-    console.log('Items from props are -->', items)
-
     const [expandedIndex, setExpandedIndex] = useState(-1);
     const isExpanded = (index) => index === expandedIndex;
 
