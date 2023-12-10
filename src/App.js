@@ -8,6 +8,7 @@ const App = () => {
                 <h1>Below, Button page.</h1>
                 <ButtonPage />
             </div>
+            <br />
             <div>
                 <h1>Below, Accordion page</h1>
                 <AccordionPage />
