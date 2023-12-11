@@ -10,7 +10,7 @@ const Dropdown = ({ colors, selectedOption, handleSelectedOption }) => {
 
     useEffect(() => {
         const handler = (event) => {
-            if(!divElement.current.contains(event.target)){
+            if(!divElement.current?.contains(event.target)){
                 setExpanded(false)
             }
         }

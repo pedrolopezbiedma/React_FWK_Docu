@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import className from 'classnames'
+import useNavigationContext from '../../hooks/useNavigationContext';
 
-import NavigationContext from "../context/NavigationContext";
 
 const Link = ({ children, pathTo, classNames }) => {
-    const { navigateTo } = useContext(NavigationContext);
+    const { navigateTo } = useNavigationContext();
     const finalClassName = className(classNames, 'text-blue-500');
 
     const handleClick = (event) => {

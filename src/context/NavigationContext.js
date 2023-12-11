@@ -20,6 +20,7 @@ const NavigationContextProvider = ({ children }) => {
 
     const navigateTo = (pathTo) => {
         window.history.pushState({}, '', pathTo)
+        setCurrentPath(pathTo)
     }
 
     return (
