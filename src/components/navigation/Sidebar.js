@@ -5,6 +5,7 @@ const Sidebar = () => {
         { label: 'Dropdown', path: '/' },
         { label: 'Button', path: '/button' },
         { label: 'Accordion', path: '/accordion' },
+        { label: 'Modal', path: '/modal' },
     ]
     return (
         <div>
@@ -12,6 +13,7 @@ const Sidebar = () => {
                 return (
                     <Link
                         classNames='sticky top-0 overflow-y-scroll flex flex-col items-start'
+                        key={route.label}
                         pathTo={route.path}>{ route.label }</Link>
                 )
             }) }

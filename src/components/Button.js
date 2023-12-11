@@ -32,7 +32,7 @@ const Button = ({
 
     return(
         <div>
-            <button className={classes}> { children } </button>
+            <button {...rest} className={classes}> { children } </button>
         </div>
     )
 }
