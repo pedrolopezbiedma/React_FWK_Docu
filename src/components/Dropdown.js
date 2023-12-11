@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 import Panel from "./Panel";
 
@@ -6,6 +6,22 @@ import { GoChevronDown } from "react-icons/go";
 
 const Dropdown = ({ colors, selectedOption, handleSelectedOption }) => {
     const [expanded, setExpanded] = useState(false);
+    const divElement = useRef();
+
+    useEffect(() => {
+        const handler = (event) => {
+            if(!divElement.current.contains(event.target)){
+                setExpanded(false)
+            }
+        }
+
+        document.addEventListener('click', handler, true)
+
+        // Clean up
+        return () => {
+            document.removeEventListener('click', handler)
+        }
+    }, [])
 
     const handleExpandOptions = () => {
         setExpanded(!expanded)
@@ -17,9 +33,9 @@ const Dropdown = ({ colors, selectedOption, handleSelectedOption }) => {
     }
 
     return (
-        <div className="w-48 relative">
+        <div className="w-48 relative" ref={ divElement }>
             <Panel 
-                className='w-48 relative flex justify-between items-center cursor-pointer'
+                className='flex justify-between items-center cursor-pointer'
                 onClick={handleExpandOptions}>
                     { selectedOption?.value || 'Select...'}
                     <GoChevronDown className="text-2xl"/>

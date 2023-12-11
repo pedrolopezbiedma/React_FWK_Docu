@@ -14,11 +14,13 @@ const DropdownPage = () => {
     }
 
     return(
+        <div className="flex">
         <Dropdown
             colors = { colors }
             selectedOption={ selectedOption }
             handleSelectedOption={ handleSelectedOption }
         />
+        </div>
     )
 }
 
