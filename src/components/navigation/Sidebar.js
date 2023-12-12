@@ -6,6 +6,7 @@ const Sidebar = () => {
         { label: 'Button', path: '/button' },
         { label: 'Accordion', path: '/accordion' },
         { label: 'Modal', path: '/modal' },
+        { label: 'Table', path: '/table' },
     ]
     return (
         <div>
