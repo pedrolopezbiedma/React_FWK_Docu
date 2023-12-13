@@ -30,8 +30,12 @@ const keyFn = (item) => item.name
 const TablePage = () => {
     return (
         <div>
+            <h1>Sortable Table</h1>
             <SortablePage items={items} config={config} keyFn={keyFn} />
-            {/* // <Table items={ items } config={ config } keyFn = { keyFn }/> */}
+
+            <br />
+            <h1>Fix Table</h1>
+            <Table items={ items } config={ config } keyFn = { keyFn }/>
         </div>
     )
 }

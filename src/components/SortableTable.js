@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
+
 import Table from "./Table"
 
 const getSortValue = (item) => item.sortBy;
@@ -9,11 +11,38 @@ const SortablePage = (props) => {
     const [sortOrder, setSortOrder] = useState(null);
     console.log('order By is -->', sortBy ,' and sortOrder ', sortOrder)
 
+    const getHeaderIcons = (column) => {
+        // TODO: Fix this!
+        if(sortBy){
+            if(sortBy !== column.label) {
+                return (
+                    <div>
+                        <GoTriangleUp />
+                        <GoTriangleDown />
+                    </div>
+                    )
+            } else {
+                if(sortOrder === 'asc') {
+                   return <GoTriangleDown />
+                }
+
+            }
+        }
+    }
+
     const generateColumns = () => {
         return config.map((configItem) => {
             return {
                 ...configItem,
-                header: configItem.sortBy ? <th onClick={() => handleColumnClick(configItem.label)}>{configItem.label}</th> : <th>{configItem.label}</th>
+                header: configItem.sortBy ? 
+                    <th className="cursor-pointer hover:bg-gray-100" onClick={() => handleColumnClick(configItem.label)}>
+                        <div className="flex items-center">
+                            {getHeaderIcons(configItem)}
+                            {configItem.label}
+                        </div>
+                    </th>
+                    :
+                    <th>{configItem.label}</th>
             }
         })
     }

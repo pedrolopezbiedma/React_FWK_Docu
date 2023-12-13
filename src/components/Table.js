@@ -3,7 +3,6 @@ import React from 'react'
 const Table = ({ items, config, keyFn }) => {
     return(
         <div>
-            <div>{ items.length }</div>
             <table className="table-auto border-spacing-2">
                 <thead>
                     <tr className="border-b-2">
