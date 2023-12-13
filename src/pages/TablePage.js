@@ -35,6 +35,7 @@ const TablePage = () => {
 
             <br />
             <h1>Fix Table</h1>
+            // TODO: Update info on this table
             <Table items={ items } config={ config } keyFn = { keyFn }/>
         </div>
     )
