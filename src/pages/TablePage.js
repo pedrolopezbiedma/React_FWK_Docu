@@ -1,4 +1,5 @@
-import Table from "../components/Table"
+import SortablePage from "../components/SortableTable"
+import Table from '../components/Table'
 
 const items = [
     { name: 'Apple', color: 'bg-red-500', score: 3},
@@ -6,10 +7,12 @@ const items = [
     { name: 'Lime', color: 'bg-green-400', score: 5},
     { name: 'Orange', color: 'bg-orange-400', score: 2},
 ]
+
 const config = [
     { 
         label: 'Name',
-        render: (item) => item.name 
+        render: (item) => item.name,
+        sortBy: (item) => item.name
     },
     { 
         label: 'Color',
@@ -18,6 +21,7 @@ const config = [
     { 
         label: 'Score',
         render: (item) => item.score,
+        sortBy: (item) => item.score,
         header: () => <th className="bg-red-500">Score</th>
     },
 ]
@@ -26,7 +30,10 @@ const keyFn = (item) => item.name
 
 const TablePage = () => {
     return (
-        <Table items={ items } config={ config } keyFn = { keyFn }/>
+        <div>
+            <SortablePage items={items} config={config} keyFn={keyFn} />
+            {/* // <Table items={ items } config={ config } keyFn = { keyFn }/> */}
+        </div>
     )
 }
 
