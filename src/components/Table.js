@@ -1,23 +1,31 @@
-const Table = ({ items }) => {
+import React from 'react'
+
+const Table = ({ items, config, keyFn }) => {
     return(
         <div>
             <div>{ items.length }</div>
             <table className="table-auto border-spacing-2">
                 <thead>
                     <tr className="border-b-2">
-                        <th>Name</th>
-                        <th>Color</th>
-                        <th>Score</th>
+                        { config.map((column) => {
+                            return (
+                                <React.Fragment key={column.label}>
+                                    { column.header ? column.header() : <th>{column.label}</th> }
+                                </React.Fragment>
+                            )
+                        })}
                     </tr>
                 </thead>
                 <tbody>
                     { items.map((item) => {
-                        return(
-                            <tr key={item.name} className="border-b">
-                               <td className="p-3">{ item.name }</td>
-                               <td className="p-3"><div className={`p-3 m-2 ${item.color}`}></div></td>
-                               <td className="p-3">{ item.score }</td>
-                            </tr>
+                        return (
+                            <tr key={keyFn(item)} className="border-b">
+                                { config.map((column) => {
+                                    return (
+                                        <td key={column.label} className="p-3">{column.render(item)}</td>
+                                    )
+                                })}
+                        </tr>
                         )
                     })}
                 </tbody>
