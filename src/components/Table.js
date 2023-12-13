@@ -10,7 +10,7 @@ const Table = ({ items, config, keyFn }) => {
                         { config.map((column) => {
                             return (
                                 <React.Fragment key={column.label}>
-                                    { column.header ? column.header() : <th>{column.label}</th> }
+                                    { column.header }
                                 </React.Fragment>
                             )
                         })}

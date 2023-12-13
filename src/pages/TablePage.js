@@ -22,7 +22,6 @@ const config = [
         label: 'Score',
         render: (item) => item.score,
         sortBy: (item) => item.score,
-        header: () => <th className="bg-red-500">Score</th>
     },
 ]
 
