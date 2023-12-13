@@ -2,7 +2,7 @@ import Counter from "../components/Counter"
 
 const CounterPage = () => {
     return (
-        <Counter />
+        <Counter initialCount={0}/>
     )
 }
 
