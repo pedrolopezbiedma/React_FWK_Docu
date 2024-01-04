@@ -2,19 +2,21 @@
 
 Repository created following this [Udemy Course](https://www.udemy.com/course/react-redux/) to practice the following basic React concepts:
 
-- TODO
+- Navigation
+- Advanced components props system
+- Intensive Component Reutilization
 
 ## Application
 
-- TODO
-  ![Screenshot](src/utils/Reading_Books.png)
+Application is basically intending to emulate a Framework documentation where, by using navigation you can check different components and it behaviour.
+![Screenshot](src/utils/FWK_Docu.png)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/pedrolopezbiedma/React_Reading_Books.git
+  git clone https://github.com/pedrolopezbiedma/React_FWK_Docu.git
 ```
 
 Install dependencies
@@ -23,7 +25,7 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the application
 
 ```bash
   npm run start
